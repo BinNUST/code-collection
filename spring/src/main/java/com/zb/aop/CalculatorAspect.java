@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class CalculatorAspect {//com.zb.aop
+public class CalculatorAspect {
     @Before("execution(* com.zb.aop.CalculatorService.mul(..))")
     public void before(JoinPoint joinPoint) {
         System.out.println("前置增强");
