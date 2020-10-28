@@ -1,0 +1,10 @@
+Ctrl+B Sublime Text compile run C program
+
+去IOE：阿里巴巴提出的概念，本意是在阿里巴巴的IT架构中，去掉IBM的小型机，Oracle数据库，EMC存储设备，代之以自己在开源软件基础上开发的系统
+
+TransactionSynchronizationManager.getCurrentTransactionName() 获取当前事务名称
+@Transactional(propagation= Propagation.REQUIRES_NEW) 开启新的事务
+
+Checked异常，必须显示处理(try...catch or throw)，常见的有Java.lang.ClassNotFoundException, Java.lang.NoSuchMethodException, Java.io.IOException
+RuntimeException常见的有Java.lang.ArithmeticException, Java.lang.ArrayStoreException, Java.lang.ClassCastException, Java.lang.IndexOutOfBoundsException, Java.lang.NullPointerException
+

@@ -1,0 +1,18 @@
+P: JDBC: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone
+S: 在jdbc连接的url后面加上?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8; 或者使用低版本的MySQL jdbc驱动
+
+P: 请求项目地址，遇到unknown the request
+S: 原因是端口可能被QQ占用了，QQ有时候也会用8082端口
+
+P: JDBC: Parameter metadata not available for the given statement
+S: 在jdbc连接的url后面加上 generateSimpleParameterMetadata=true
+
+P: XML中不能识别&
+S: 使用&amp
+
+P: Postgresql能连接，报错 permission denied for relation f_userinfo
+S: GRANT ALL PRIVILEGES ON DATABASE appr42(table) TO appr(user)
+
+P: 对于order by查询，带或者不带limit可能返回行的顺序是不一样的
+S: 如果order by的字段有多个行都有相同的值，MySQL会以随机的顺序返回查询结果，具体依赖对应的执行计划
+如果想在limit存在或不存在的情况下，都保证排序结果相同，可以额外加一个排序条件。例如id字段是唯一的，可以考虑在排序字段中额外加个id排序去确保顺序稳定
