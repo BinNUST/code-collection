@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深入浅出SpringBoot2.x</title>
+	</head>
+	<body>
+		<p>杨开振 著，2018第1版</p>
+		<br>
+		<a href="#3">全注解下的Spring IoC</a>
+
+		<h2 id="3">全注解下的Spring IoC</h2>
+		<p>在Spring的定义中，要求所有的IoC容器都需要实现接口BeanFactory</p>
+		<p>ApplicationContext，BeanFactory的子接口，在现实中我们使用的大部分Spring IoC容器是ApplicationContext接口的实现类</p>
+		<p>@Autowired首先会根据类型找对应的bean，再根据其属性名称和bean的名称进行匹配：(Dog, Cat implements Animal) private Animal dog</p>
+		<p>消除歧义性：@Primary 和 @Qualifier</p>
+		<p>条件装配Bean: @Conditional</p>
+		<p>@Profile, spring.profiles.active > spring.profiles.default</p>
+		<p>@ImportResource 引入XML配置</p>
+		<br><br><br>
+	</body>
+</html>

@@ -19,3 +19,11 @@ S: 如果order by的字段有多个行都有相同的值，MySQL会以随机的�
 
 P: @Query 报错Validation failed for query for method public abstract
 S: 在@Query(value="", nativeQuery=true)开启本机查询
+
+P: Error:java: Compilation failed: internal java compiler error
+S: File ->Project Structure->Project Settings ->Project
+    File ->Project Structure->Project Settings -> Modules -> （需要修改的工程名称） -> Sources ->
+    File ->Setting ->Build,Execution,Deployment -> Compiler -> Java Compiler
+    File->Invalidate Caches/Restart
+
+P:
