@@ -26,4 +26,23 @@ S: File ->Project Structure->Project Settings ->Project
     File ->Setting ->Build,Execution,Deployment -> Compiler -> Java Compiler
     File->Invalidate Caches/Restart
 
-P:
+P: 修改maven的pom文件，导致idea编译版本变成1.5
+S: 加上
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+P: PostgreSQL大小写的问题
+S: pg对建立的对象(存储过程，函数，表，字段，序列等)名称的大小写敏感
+    如果要调用大写的pg对象，需要在对应的名称上加双引号，如select * from "NODE", a."NODE"
+    建议在pg中能用小写就小写

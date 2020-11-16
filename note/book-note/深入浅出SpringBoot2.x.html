@@ -7,7 +7,12 @@
 	<body>
 		<p>杨开振 著，2018第1版</p>
 		<br>
-		<a href="#3">全注解下的Spring IoC</a>
+		<p><a href="#3">全注解下的Spring IoC</a></p>
+		<p><a href="#4">开始约定编程--Spring AOP</a></p>
+		<p><a href="#5">访问数据库</a></p>
+		<p><a href="#6">聊聊数据库事务处理</a></p>
+		<p><a href="#7">使用性能利器--Redis</a></p>
+		<br><br><br>
 
 		<h2 id="3">全注解下的Spring IoC</h2>
 		<p>在Spring的定义中，要求所有的IoC容器都需要实现接口BeanFactory</p>
@@ -16,7 +21,35 @@
 		<p>消除歧义性：@Primary 和 @Qualifier</p>
 		<p>条件装配Bean: @Conditional</p>
 		<p>@Profile, spring.profiles.active > spring.profiles.default</p>
-		<p>@ImportResource 引入XML配置</p>
+		<p>@ImportResource("classpath:spring-other.xml") 引入XML配置</p>
 		<br><br><br>
+
+		<h2 id="4">开始约定编程--Spring AOP</h2>
+		<p>@Aspect 定义切面</p>
+		<p>@PointCut 定义切点</p>
+		<p>@DeclareParents 引入新的类来增强服务</p>
+		<p>@Order 和接口 Ordered 定义切面顺序</p>
+		<br><br><br>
+
+		<h2 id="5">访问数据库</h2>
+        <p>@EnableJpaRepositories 和 @EntityScan</p>
+        <p>MyBatis TypeHandler&lt;T&gt;, BaseTypeHandler&lt;T&gt;, @MappedJdbcTypes, @MappedTypes</p>
+        <p>@MapperScan</p>
+		<br><br><br>
+
+        <h2 id="6">聊聊数据库事务处理</h2>
+        <p>建议@Transactional放在实现类上而不是接口上，可以使用CGLIB代理</p>
+        <p>事务定义器TransactionDefinition</p>
+        <p>事务管理器 接口PlatformTransactionManager; mybatis-spring-boot-starter -> DataSourceTransactionManager; spring-boot-starter-jpa -> JpaTransactionManager</p>
+        <p>mybatis &lt;insert&gt;元素的属性useGeneratedKeys和keyProperty，在插入数据后使用数据库生成机制回填对象的主键</p>
+        <p>Spring事务传播之 NESTED：使用保存点(save point)技术来完成子事务回滚而不致使当前事务回滚的工作。</p>
+        <p>当数据库支持保存点时，就启用保存点技术，否则新建一个事务运行代码，等价于REQUIRES_NEW传播行为</p>
+        <p>NESTED传播行为和REQUIRES_NEW还是有区别的。NESTED会沿用当前事务的隔离级别和锁等特性，而REQUIRES_NEW则可以拥有自己独立的隔离级别和锁等特性</p>
+        <p>@Transactional自调用失效问题：用一个service去调用另一个service；或者从Spring IoC容器中获取代理对象去启用AOP</p>
+        <br><br><br>
+
+        <h2 id="7">使用性能利器--Redis</h2>
+		<p>RedisConnectionFactory, RedisTemplate</p>
+        <br><br><br>
 	</body>
 </html>
