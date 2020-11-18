@@ -12,6 +12,8 @@
 		<p><a href="#5">访问数据库</a></p>
 		<p><a href="#6">聊聊数据库事务处理</a></p>
 		<p><a href="#7">使用性能利器--Redis</a></p>
+		<p><a href="#9">初识 Spring MVC</a></p>
+		<p><a href="#10">深入 Spring MVC 开发</a></p>
 		<br><br><br>
 
 		<h2 id="3">全注解下的Spring IoC</h2>
@@ -50,6 +52,19 @@
 
         <h2 id="7">使用性能利器--Redis</h2>
 		<p>RedisConnectionFactory, RedisTemplate</p>
+		<p>序列化器：JacksonJsonRedisSerializer, StringRedisSerializer, JdkSerializationRedisSerializer</p>
+		<p>连续操作接口：BoundXXXOperations</p>
+		<p>在同一条Redis连接下执行多个方法：RedisCallback, SessionCallback(属于pipeline)</p>
+		<p>配置Redis缓存管理器: spring.cache.type=REDIS spring.cache.cache-names=redisCache</p>
+		<p>缓存自调用失效问题</p>
         <br><br><br>
+
+		<h2 id="9">初识 Spring MVC</h2>
+		<p>DispatcherServlet</p>
+		<p>定制Spring MVC的初始化：WebMvcConfigurer, WebMvcAutoConfigurationAdapter</p>
+		<br><br><br>
+
+		<h2 id="10">深入 Spring MVC 开发</h2>
+		<br><br><br>
 	</body>
 </html>
