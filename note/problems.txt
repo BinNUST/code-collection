@@ -46,3 +46,7 @@ P: PostgreSQL大小写的问题
 S: pg对建立的对象(存储过程，函数，表，字段，序列等)名称的大小写敏感
     如果要调用大写的pg对象，需要在对应的名称上加双引号，如select * from "NODE", a."NODE"
     建议在pg中能用小写就小写
+
+P: tomcat正常启动，服务无法访问
+S: 可能是防火墙未开启服务端口； vim /etc/sysconfig/iptables 加入 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8087 -j ACCEPT 重启防火墙 service iptables restart
+
