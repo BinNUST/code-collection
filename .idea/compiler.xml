@@ -7,15 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="js" />
-        <module name="all_in_one" />
+        <module name="redis" />
         <module name="algorithm" />
         <module name="spring" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="all_in_one" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="all_in_one" options="-parameters" />
+      <module name="redis" options="-parameters" />
     </option>
   </component>
 </project>
